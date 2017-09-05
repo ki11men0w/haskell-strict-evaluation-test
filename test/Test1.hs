@@ -37,6 +37,6 @@ specTest1 = do
       it "rdeepseq && bang pattern" $
          runEnvironment withStrategiesRdeepseqWithBangPattern
       it "rdeepseq && runEval" $
-         runEnvironment withStrategiesRdeepseqWithRunEval
+         runEnvironment withStrategiesRdeepseqWithRunEval `shouldThrow` delayedReadOnClosedHandle
       it "rseq && evaluate should end with error" $
          runEnvironment withStrategiesRseqWithEvaluate `shouldThrow` delayedReadOnClosedHandle
